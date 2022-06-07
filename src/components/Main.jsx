@@ -10,25 +10,26 @@ const Main = (props) => {
   })
 
   const handleClick = (id, clicked) => {
-    if(clicked){
+    if (clicked) {
       props.resetCurrentScore()
+      setImageList(imageListArray)
     } else {
       props.incrementScore()
+      setImageList(
+        imageList.map((item) => {
+          if (item.id === id) {
+            return {
+              ...item,
+              clicked: true,
+            }
+          } else {
+            return {
+              ...item,
+            }
+          }
+        })
+      )
     }
-    setImageList(
-      imageList.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            clicked: true,
-          }
-        } else {
-          return {
-            ...item
-          }
-        }
-      })
-    )
   }
 
   return (
@@ -39,7 +40,7 @@ const Main = (props) => {
             key={item.id}
             onClick={() => handleClick(item.id, item.clicked)}
             src={item.imageURL}
-            width='300px'
+            width='250px'
           />
         )
       })}
