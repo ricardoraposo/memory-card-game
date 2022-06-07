@@ -16,9 +16,10 @@ body {
   font-family: 'Roboto', sans-serif;
   height: 100%;
   background-image: linear-gradient(#0f172a, #64748b);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   text-align: center;
   color: white;
-  background-repeat: no-repeat;
 }
 
 .header {
