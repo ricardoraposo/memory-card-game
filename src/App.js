@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 
 const App = () => {
-  const [currentScore, setCurrentScore] = useState(0)
+  const [currentScore, setCurrentScore] = useState(100)
   const [highScore, setHighScore] = useState(0)
 
   function incrementScore () {
